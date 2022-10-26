@@ -1,0 +1,38 @@
+1642604073178	geckodriver	INFO	Listening on 127.0.0.1:57543
+1642606108352	geckodriver	INFO	Listening on 127.0.0.1:58675
+1642606400164	geckodriver	INFO	Listening on 127.0.0.1:63702
+1642689790101	geckodriver	INFO	Listening on 127.0.0.1:53002
+1642690058668	geckodriver	INFO	Listening on 127.0.0.1:49686
+1642690244398	geckodriver	INFO	Listening on 127.0.0.1:62529
+1642691914311	geckodriver	INFO	Listening on 127.0.0.1:63373
+1642692141449	geckodriver	INFO	Listening on 127.0.0.1:61198
+1642692154088	geckodriver	INFO	Listening on 127.0.0.1:61226
+1642692525597	geckodriver	INFO	Listening on 127.0.0.1:59347
+1642706270975	geckodriver	INFO	Listening on 127.0.0.1:54521
+1642706274060	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\admin\\AppData\\Local\\Temp\\rust_mozprofilevySNg0"
+1642706275013	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\admin\\AppData\\Local\\Temp\\rust_mozprofilevySNg0\\search.json.mozlz4", (void 0)))
+1642706277381	Marionette	INFO	Listening on port 54532
+1642706277735	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://automationteststore.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://automationteststore.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://automationteststore.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://automationteststore.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1642706290889	Marionette	INFO	Stopped listening on port 54532
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1642706382865	geckodriver	INFO	Listening on 127.0.0.1:50012
+1642706385898	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\admin\\AppData\\Local\\Temp\\rust_mozprofileJxfi5X"
+1642706386200	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\admin\\AppData\\Local\\Temp\\rust_mozprofileJxfi5X\\search.json.mozlz4", (void 0)))
+1642706388051	Marionette	INFO	Listening on port 50024
+1642706388560	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+1642706425152	Marionette	INFO	Stopped listening on port 50024

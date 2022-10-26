@@ -1,0 +1,38 @@
+{
+    "users":[
+        {
+            "user":"gonza_mol",
+            "password":"Chicharito10"
+
+        },
+        {
+            "user":"sergito",
+            "password":"Cachavacha20"
+
+        },
+        {
+            "user":"pablo",
+            "password":"Charrua30"
+
+
+        },
+        {
+            "user":"",
+            "password":"Charrua30"
+
+
+        },
+        {
+            "user":"pablo",
+            "password":""
+
+
+        },
+        {
+            "user":"pablos",
+            "password":"Charrua30"
+
+
+        }
+    ]
+}
