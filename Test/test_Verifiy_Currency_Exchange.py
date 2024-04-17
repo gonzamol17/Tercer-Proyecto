@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
@@ -10,12 +13,10 @@ from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.ShoppingCartPage import ShoppingCartPage
 from POM.ShampooPage import ShampooPage
-import HtmlTestRunner
 
 
 @pytest.mark.sanity
-@pytest.mark.usefixtures("test_setup")
-class TestVerifyCurrencyExchange():
+class TestVerifyCurrencyExchange(BaseClass):
 
     def test_Verify_ContactUsForm(self):
         driver = self.driver
@@ -77,11 +78,5 @@ class TestVerifyCurrencyExchange():
         print(Fore.GREEN + "y ambos precios están en moneda Euro")
 
 
-
-
-
-        if __name__ == '__main__':
-            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
 
 

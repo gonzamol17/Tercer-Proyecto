@@ -1,16 +1,13 @@
-from pytest_bdd.parsers import string
-from selenium import webdriver
-import unittest
-import pytest
 import sys
 import os
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import time
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestGiveReview():
+class TestGiveReview(BaseClass):
 
     def test_setUpClass(self):
         driver = self.driver

@@ -13,12 +13,9 @@ import time
 from POM.MyAccountPage import MyAccountPage
 from POM.LandingPage import LandingPage
 from POM.SpecialOffersPage import SpecialOffersPage
-import HtmlTestRunner
 
 
-@pytest.mark.usefixtures("test_setup")
 class Test_SpecialOffers(BaseClass):
-
 
     def test_Verify_Specials_Offers(self):
         driver = self.driver
@@ -53,10 +50,5 @@ class Test_SpecialOffers(BaseClass):
                  print(Fore.RED+"En alguno de los productos, el label Sales, no se está visualizando"+Fore.RESET)
 
         log.info("Se ve el resultado final")
-
-    if __name__ == '__main__':
-            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
-
 
 

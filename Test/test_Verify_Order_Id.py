@@ -4,6 +4,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
@@ -14,13 +17,10 @@ from POM.ProductPage import ProductPage
 from POM.ShoppingCartPage import ShoppingCartPage
 from POM.CheckoutConfirmationPage import CheckoutConfirmationPage
 from POM.My_Order_History import My_Order_History
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestVerifyOrder():
-
+class TestVerifyOrder(BaseClass):
 
     def test_VerifyOrder(self):
         driver = self.driver
@@ -68,10 +68,5 @@ class TestVerifyOrder():
         aux1 = moh.Verify_Order_History()
         assert Only_order_id in aux1
         print(Fore.GREEN+ "El id de la orden recientemente obtenida, coincide con el id último de mi historial, y es: "+moh.Verify_Order_History())
-
-
-
-    if __name__ == '__main__':
-         unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
 
 

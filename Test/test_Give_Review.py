@@ -3,18 +3,18 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.ShampooPage import ShampooPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestGiveReview():
-
+class TestGiveReview(BaseClass):
 
     def test_Give_Review(self):
         driver = self.driver
@@ -47,12 +47,6 @@ class TestGiveReview():
         time.sleep(2)
         error = sp.errorWithoutCode()
         #assert "Human verification has failed! Please try again." in sp.errorWithoutCode()
-        assert "nada se compara" in sp.errorWithoutCode()
+        assert "Human verification has failed!" in sp.errorWithoutCode()
         print("Al no cargar el código requerido, se está mostrando un mensaje de error: "+sp.errorWithoutCode())
 
-
-
-
-
-    if __name__ == '__main__':
-         unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

@@ -2,21 +2,21 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
 from POM.MyAccountPage import MyAccountPage
-import HtmlTestRunner
 from Utils.screenShotNoUSAR import Screen
 
 
-
-@pytest.mark.usefixtures("test_setup")
-
-class TestVerify_Testimonials():
+class TestVerify_Testimonials(BaseClass):
 
 
     def test_Order_By_Name(self):
+        log = self.get_Logger()
         driver = self.driver
         #driver.get(utils.URL)
         time.sleep(2)
@@ -49,9 +49,10 @@ class TestVerify_Testimonials():
         else:
             print(Fore.GREEN+"Todos los productos están ordenados alfabéticamente (A-Z)"+Fore.RESET)
             print(Fore.GREEN+"El orden de los paperback listados es: " + str(lista2)+Fore.RESET)
+        log.info("Ha finalizado la ejecución")
 
 
 
-if __name__ == '__main__':
-            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
+#if __name__ == '__main__':
+#            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
+#               output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

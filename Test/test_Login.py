@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
 from colorama import Fore, Back, Style
@@ -10,14 +13,13 @@ from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestLogin:
+class TestLogin(BaseClass):
 
     def test_Login(self):
+        log = self.get_Logger()
         driver = self.driver
         #driver.get(utils.URL)
         lp = LandingPage(driver)
@@ -25,7 +27,7 @@ class TestLogin:
         logpa = LoginPage(driver)
         time.sleep(2)
         my = MyAccountPage(driver)
-        file = open("C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Datos\\Login.json", "r")
+        file = open("C:\\Users\\User\\PycharmProjects\\Tercer-Proyecto\\Datos\\Login.json", "r")
         jsondata = file.read()
         obj = json.loads(jsondata)
         list = obj['users']
@@ -56,5 +58,5 @@ class TestLogin:
                 lp.click_Go_Login()
                 time.sleep(2)
 
-    if __name__ == '__main__':
-         unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
+    #if __name__ == '__main__':
+     #    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

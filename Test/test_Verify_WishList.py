@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.MyAccountPage import MyAccountPage
@@ -12,13 +15,9 @@ from POM.ShoppingCartPage import ShoppingCartPage
 from POM.LipsPage import LipsPage
 from POM.ProductPage import ProductPage
 from POM.WishListPage import WishListPage
-import HtmlTestRunner
 
 
-
-@pytest.mark.usefixtures("test_setup")
-class TestVerifyWishList():
-
+class TestVerifyWishList(BaseClass):
 
     def test_VerifyWishList(self):
         driver = self.driver
@@ -57,7 +56,3 @@ class TestVerifyWishList():
         assert product == wl.verify_product_added()
         print(Fore.GREEN + "El producto seleccionado " + product + " coincide con el de Mi lista de deseos  " + wl.verify_product_added())
 
-
-        if __name__ == '__main__':
-                unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                    output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

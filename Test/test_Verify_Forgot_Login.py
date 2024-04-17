@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
@@ -10,13 +13,11 @@ from POM.ForgotLoginPage import ForgotLoginPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.ContactUsPage import ContactUsPage
-import HtmlTestRunner
 from Utils import utils as utils
 
-@pytest.mark.sanity
-@pytest.mark.usefixtures("test_setup")
-class TestVerifyForgotLogin():
 
+@pytest.mark.sanity
+class TestVerifyForgotLogin(BaseClass):
 
     def test_Verify_Forgot_Login_Successfully(self):
         driver = self.driver

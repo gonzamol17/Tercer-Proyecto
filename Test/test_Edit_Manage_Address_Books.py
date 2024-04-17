@@ -1,6 +1,9 @@
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -10,8 +13,7 @@ from POM.MyAccountPage import MyAccountPage
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class Test_Edit_Manage_Address_Books():
+class Test_Edit_Manage_Address_Books(BaseClass):
 
 
     def test_Edit_Manage_Address_Books(self):

@@ -3,18 +3,19 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.MyAccountPage import MyAccountPage
 from POM.CreateUserPage import CreateUserPage
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestCreateUser():
+class TestCreateUser(BaseClass):
 
 
     def test_CreateUser(self):

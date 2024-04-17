@@ -3,16 +3,17 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from POM.CreateUserPage import CreateUserPage
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
-import HtmlTestRunner
 from Utils import utils as utils
 
-@pytest.mark.usefixtures("test_setup")
-class TestUserAlreadyBeenCreated():
 
+class TestUserAlreadyBeenCreated(BaseClass):
 
     def test_UserAlreadyBeenCreated(self):
         driver = self.driver
@@ -43,9 +44,3 @@ class TestUserAlreadyBeenCreated():
         print(x)
         assert x == '×\nError: E-Mail Address is already registered!'
         print("The user could not be created, because it already exists in the system")
-
-
-
-
-    if __name__ == '__main__':
-         unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

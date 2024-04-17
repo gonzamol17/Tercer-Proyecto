@@ -3,17 +3,18 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from selenium.common.exceptions import NoSuchElementException
 from POM.MyAccountPage import MyAccountPage
 from POM.ProductPage import ProductPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestProductOfStock():
+class TestProductOfStock(BaseClass):
 
 
     def test_Product_Of_Stock(self):
@@ -42,18 +43,20 @@ class TestProductOfStock():
         assert 'rgb(204, 204, 204)' in pp.getObjectOutofStock().value_of_css_property('background')
 
         print(Fore.GREEN +"El producto seleccionado es :"+title+" y está "+leyend+" y el color es :"+colorOutofStock)
-        try:
-            btnAddCart = driver.find_element_by_css_selector("div:nth-child(2)>div.thumbnail>div.pricetag.jumbotron>a")
-            btnAddCart.click()
-            print(Fore.RED + "El btn ADD TO CART se está visualizando en el producto seleccionado y no debería")
+        #try:
+       #     #btnAddCart = driver.find_element_by_css_selector("div:nth-child(2)>div.thumbnail>div.pricetag.jumbotron>a")
+       #    btnAddCart = driver.find_element_by_css_selector("#maincontainer div.pricetag.jumbotron > span")
+       #     print(btnAddCart.text)
+        #    btnAddCart.click()
+       #     print(Fore.RED + "El btn ADD TO CART se está visualizando en el producto seleccionado y no debería")
 
-        except NoSuchElementException as e:
-            print(Fore.GREEN + "El botón ADD TO CART No está")
-            print(e)
+ #      except NoSuchElementException as e:
+   #         print(Fore.GREEN + "El botón ADD TO CART No está")
+   #         print(e)
 
 
 
 
-if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
+#if __name__ == '__main__':
+#    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
 

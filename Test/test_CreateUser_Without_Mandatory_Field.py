@@ -3,18 +3,18 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.CreateUserPage import CreateUserPage
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from Utils import utils as utils
-import HtmlTestRunner
 
 
-
-@pytest.mark.usefixtures("test_setup")
-class TestCreateUserWithoutMandatoryField():
+class TestCreateUserWithoutMandatoryField(BaseClass):
 
 
     def test_CreateUserWithoutMandatoryField(self):
@@ -48,7 +48,3 @@ class TestCreateUserWithoutMandatoryField():
         print(Fore.RED +"A new account could not be created, as the mandatory fields are all empty")
         print(Fore.RED +"All alert messages have been displayed, for empty mandatory fields")
 
-
-
-    if __name__ == '__main__':
-         unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)

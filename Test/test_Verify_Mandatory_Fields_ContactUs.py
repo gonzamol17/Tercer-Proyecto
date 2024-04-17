@@ -3,19 +3,20 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.ContactUsPage import ContactUsPage
-import HtmlTestRunner
 from Utils import utils as utils
 
-@pytest.mark.sanity
-@pytest.mark.usefixtures("test_setup")
-class TestVerifyMandatoryFieldContactUs():
 
+@pytest.mark.sanity
+class TestVerifyMandatoryFieldContactUs(BaseClass):
 
     def test_Verify_Mandatory_Fields_ContactUs(self):
         driver = self.driver
@@ -51,12 +52,6 @@ class TestVerifyMandatoryFieldContactUs():
         print(Fore.RED +"\n"+name)
         print(Fore.RED +"\n"+email)
         print(Fore.RED +"\n"+enquiry)
-
-
-
-        if __name__ == '__main__':
-            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
 
 
 

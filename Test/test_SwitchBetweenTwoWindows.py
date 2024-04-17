@@ -2,19 +2,19 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestSwitchBetweenTwoWindows():
-
+class TestSwitchBetweenTwoWindows(BaseClass):
 
     def test_SwitchBetweenTwoWindows(self):
         driver = self.driver
@@ -41,7 +41,7 @@ class TestSwitchBetweenTwoWindows():
         time.sleep(2)
         print("La url de la ventana 2 es: "+driver.current_url)
         print("El nombre de la Tab de la ventana 2 es: "+driver.title)
-        assert driver.title == "Facebook - Inicia sesión o regístrate"
+        assert driver.title == "Facebook - Entrar o registrarse"
         print(Fore.GREEN + "++++++++++++++++++++++++++++++DATOS PESTAÑA Automation Test Store++++++++++++++++++++" + Fore.RESET)
         time.sleep(2)
         driver.switch_to.window(driver.window_handles[0])

@@ -2,20 +2,19 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
-import HtmlTestRunner
 from Utils import utils as utils
 
 
-@pytest.mark.usefixtures("test_setup")
-class TestShowFooterElements():
-
-
+class TestShowFooterElements(BaseClass):
 
     def test_ShowFooterElements(self):
         driver = self.driver
@@ -42,6 +41,6 @@ class TestShowFooterElements():
             else:
                 print(idx, ele_foo.text[0:10])
 
-    if __name__ == '__main__':
-                unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-                    output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
+   # if __name__ == '__main__':
+    #            unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
+     #               output='C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Reports'), verbosity=2)
