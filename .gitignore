@@ -1,0 +1,14 @@
+Test/screenshots/git
+# Ignorar drivers de Selenium
+Drivers/chromedriver.exe
+Drivers/geckodriver.exe
+Data/logfile.log
+# Ignorar archivos de log y pyc
+*.log
+*.pyc
+Screenshots/
+Test/Reports
+
+
+
+

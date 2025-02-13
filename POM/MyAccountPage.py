@@ -248,3 +248,10 @@ class MyAccountPage():
 
     def getIndividualBox(self, num):
         return self.driver.find_element(By.CSS_SELECTOR, "div.col-md-9.col-xs-12.mt20>div>ul>li:nth-child("+str(num)+")>a")
+
+    def getPrueba(self, nueva_lista_actual, lista2):
+        for i in range(min(len(nueva_lista_actual), len(lista2))):
+            if nueva_lista_actual[i] != lista2[i]:
+                return False
+        return len(nueva_lista_actual) == len(lista2)
+
