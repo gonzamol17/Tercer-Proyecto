@@ -18,10 +18,11 @@ def test_setup(request):
     from selenium import webdriver
     browser = request.config.getoption("--browser")
     if browser == 'chrome':
-        # driver = webdriver.Chrome("C:\\Users\\User\\Downloads\\chromedriver-win32\\chromedriver.exe")
+        option = webdriver.ChromeOptions()
+        option.add_experimental_option("useAutomationExtension", False)
+        option.add_experimental_option("excludeSwitches", ['enable-automation'])
         service_obj = Service("..\\Drivers\\chromedriver.exe")
-        #service_obj = Service("C:\\Users\\User\\PycharmProjects\\Tercer-Proyecto\\Drivers\\chromedriver.exe")
-        driver = webdriver.Chrome(service=service_obj)
+        driver = webdriver.Chrome(service=service_obj, options=option)
     elif browser == 'firefox':
         service_obj = Service("..\\Drivers\\geckodriver.exe")
         driver = webdriver.Firefox(service=service_obj)
