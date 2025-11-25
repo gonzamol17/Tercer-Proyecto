@@ -1,12 +1,10 @@
-import unittest
-import pytest
 import sys
 import os
 
-from BaseClass import BaseClass
+from Utils.BaseClass import BaseClass
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from colorama import Fore, Back, Style
+from colorama import Fore
 import time
 from POM.MyAccountPage import MyAccountPage
 from Utils.screenShotNoUSAR import Screen

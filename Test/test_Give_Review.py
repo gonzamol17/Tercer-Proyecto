@@ -1,17 +1,14 @@
 import time
-import pytest
-import unittest
 import sys
 import os
 
-from BaseClass import BaseClass
+from Utils.BaseClass import BaseClass
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.ShampooPage import ShampooPage
-from Utils import utils as utils
 
 
 class TestGiveReview(BaseClass):

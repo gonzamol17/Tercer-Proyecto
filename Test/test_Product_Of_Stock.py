@@ -1,17 +1,13 @@
 import time
-import pytest
-import unittest
 import sys
 import os
 
-from BaseClass import BaseClass
+from Utils.BaseClass import BaseClass
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from colorama import Fore, Back, Style
-from selenium.common.exceptions import NoSuchElementException
+from colorama import Fore
 from POM.MyAccountPage import MyAccountPage
 from POM.ProductPage import ProductPage
-from Utils import utils as utils
 
 
 class TestProductOfStock(BaseClass):

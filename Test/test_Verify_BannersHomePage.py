@@ -1,18 +1,13 @@
 import unittest
-import pytest
 import sys
 import os
 
-from selenium.webdriver.common.by import By
-
-from BaseClass import BaseClass
+from Utils.BaseClass import BaseClass
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from colorama import Fore, Back, Style
+from colorama import Fore
 import time
 from POM.MyAccountPage import MyAccountPage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestVerify_BannersHomePage(BaseClass):

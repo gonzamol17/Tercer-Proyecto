@@ -1,14 +1,12 @@
 import re
 import time
-import pytest
-import unittest
 import sys
 import os
 
-from BaseClass import BaseClass
+from Utils.BaseClass import BaseClass
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from colorama import Fore, Back, Style
+from colorama import Fore
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
@@ -17,7 +15,6 @@ from POM.ProductPage import ProductPage
 from POM.ShoppingCartPage import ShoppingCartPage
 from POM.CheckoutConfirmationPage import CheckoutConfirmationPage
 from POM.My_Order_History import My_Order_History
-from Utils import utils as utils
 
 
 class TestVerifyOrder(BaseClass):
