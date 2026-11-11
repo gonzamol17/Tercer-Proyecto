@@ -15,7 +15,7 @@ from POM.MyAccountPage import MyAccountPage
 from Utils import utils as utils
 
 
-@pytest.mark.slow
+@pytest.mark.report
 class TestFindProduct(BaseClass):
 
     def test_FindProduct(self):
@@ -30,7 +30,7 @@ class TestFindProduct(BaseClass):
         # Esto permite el logueo
         logpa.do_Login("gonza_mol", "Chicharito10")
         my = MyAccountPage(driver)
-        my.seleccionar_Búsqueda("Frenche")
+        my.seleccionar_Búsqueda("French")
         my.ejecutar_Búsqueda_Glass()
         #estas lineas comentadas es para ejecutar una búsqueda de un producto usando la tecla Enter
         #my = MyAccountPage(driver)
